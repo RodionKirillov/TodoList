@@ -32,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         initViews();
 
         notesAdapter = new NotesAdapter();
+        notesAdapter.setOnNoteClickListener(new NotesAdapter.OnNoteClickListener() {
+            @Override
+            public void onNoteClick(Note note) {
+                database.remove(note.getId());
+                showNotes();
+            }
+        });
         recyclerviewNotes.setAdapter(notesAdapter);
 //        recyclerviewNotes.setLayoutManager(new LinearLayoutManager(this)); //Один из способов LayoutManager
 
