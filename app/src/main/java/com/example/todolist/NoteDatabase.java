@@ -19,7 +19,7 @@ public abstract class NoteDatabase extends RoomDatabase {
                     NoteDatabase.class,
                     DB_NAME
             )
-                    .allowMainThreadQueries()//позволяет обойти ограничения которые не дают обратиться к бд на главном потоке (используется только для тестирования)
+                    //.allowMainThreadQueries()//позволяет обойти ограничения которые не дают обратиться к бд на главном потоке (используется только для тестирования)
                     .build();
         }
         return instance;

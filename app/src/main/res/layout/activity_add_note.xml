@@ -11,14 +11,15 @@
         android:id="@+id/editTextNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginHorizontal="16dp"
         android:hint="@string/note_hint"
         android:inputType="textPersonName" />
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         android:gravity="center"
         android:orientation="horizontal">
 
