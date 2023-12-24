@@ -1,6 +1,7 @@
 package com.example.todolist;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "notes") //Указываем название таблицы
@@ -15,6 +16,10 @@ public class Note {
         this.id = id;
         this.text = text;
         this.priority = priority;
+    }
+    @Ignore // Используется для игнорирования базой данных
+    public Note(String text, int priority) {
+        this(0, text, priority);
     }
 
     public int getId() {
