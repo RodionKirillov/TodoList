@@ -32,11 +32,17 @@ android {
 }
 
 dependencies {
+    //RxJava
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
+    implementation("io.reactivex.rxjava3:rxjava:3.1.5")
 
     //ROOM
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
+
+    //RxJava3 support for Room
+    implementation("androidx.room:room-rxjava3:$room_version")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

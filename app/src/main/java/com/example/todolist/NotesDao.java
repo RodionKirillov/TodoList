@@ -8,6 +8,8 @@ import androidx.room.Query;
 
 import java.util.List;
 
+import io.reactivex.rxjava3.core.Completable;
+
 @Dao
 public interface NotesDao {
 
@@ -16,7 +18,7 @@ public interface NotesDao {
 
     @Insert
         //(onConflict = OnConflictStrategy.REPLACE) //добавление поведения при одинаковом id  у объекта
-    void add(Note note);
+    Completable add(Note note);
 
     @Query("DELETE FROM notes WHERE id = :id")
     void remove(int id);
