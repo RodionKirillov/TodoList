@@ -15,13 +15,16 @@ import io.reactivex.rxjava3.core.Single;
 public interface NotesDao {
 
     @Query("SELECT * FROM notes")
-    Single<List<Note>> getNotes();
-//    LiveData<List<Note>> getNotes();
+    List<Note> getNotes();
+    //    Single<List<Note>> getNotes();
+    //    LiveData<List<Note>> getNotes();
 
     @Insert
-        //(onConflict = OnConflictStrategy.REPLACE) //добавление поведения при одинаковом id  у объекта
-    Completable add(Note note);
+    void add(Note note);
+    //(onConflict = OnConflictStrategy.REPLACE) //добавление поведения при одинаковом id  у объекта
+    //Completable add(Note note); // поддержка rxjjava
 
     @Query("DELETE FROM notes WHERE id = :id")
-    Completable remove(int id);
+    void remove(int id);
+    //Completable remove(int id);
 }
